@@ -31,6 +31,17 @@ namespace COMP123_S2017_FinalExam_300936281
         int _maximumPoints;
         private ScoreBoard _scoreBoard;
         // PUBLIC PROPERTIES +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        public ScoreBoard ScoreBoard
+        {
+            get
+            {
+                return this._scoreBoard;
+            }
+            set
+            {
+                this._scoreBoard = value;
+            }
+        }
         public List<PictureBox> DealtCardPictureBoxList
         {
             get
@@ -199,8 +210,8 @@ namespace COMP123_S2017_FinalExam_300936281
             this._enableDealtCards();
             this._hideFinalScore();
             UserMessageTextBox.Text = "Click the Deal Button!";
-            _scoreBoard.Score = 0;
-            _scoreBoard.Time = 0;
+            ScoreBoard.Score = 0;                                      //+++++++++++++++++
+            ScoreBoard.Time = 30;
         }
 
         /// <summary>
@@ -224,7 +235,7 @@ namespace COMP123_S2017_FinalExam_300936281
         private void PickHighestCardForm_Load(object sender, EventArgs e)
         {
             // Initialize ScoreBoard HERE
-            _scoreBoard = new ScoreBoard(ScoreTextBox, TimeTextBox, FinalScoreTextBox); //+++++++++++++++++++++
+            ScoreBoard = new ScoreBoard(ScoreTextBox, TimeTextBox, FinalScoreTextBox);   //+++++++++++++++++++++++++++++++
             // Initialize the App Sounds
             this._buildDealtCardPictureBoxList();
             this._reset();
@@ -274,7 +285,8 @@ namespace COMP123_S2017_FinalExam_300936281
                 this.CurrentClickedCard.BackColor = Color.Green;
                 UserMessageTextBox.Text = "You Got It!";
 
-                //Uncomment this --> ScoreBoard.Score += this.MaximumPoints;
+                //Uncomment this --> 
+                ScoreBoard.Score += this.MaximumPoints;              //++++++++++++++++++++++++++++++
 
                 DealButton.Enabled = true;
             }
@@ -360,16 +372,16 @@ namespace COMP123_S2017_FinalExam_300936281
         /// <param name="e"></param>
         private void CountDownTimer_Tick(object sender, EventArgs e)
         {
-            /* Uncomment THIS
+            
             ScoreBoard.UpdateTime();
             if (ScoreBoard.Time == 0)
             {
                 CountDownTimer.Enabled = false;
-                DealButton.Enabled = false;
+                DealButton.Enabled = false;               //+++++++++++++++++++++++++++++
                 this._disableDealtCards();
                 this._showFinalScore();
             }
-            */
+            
         }
 
         /// <summary>

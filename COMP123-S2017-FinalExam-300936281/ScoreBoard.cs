@@ -89,7 +89,7 @@ namespace COMP123_S2017_FinalExam_300936281
             FinalScoreTextBox = finalScoreTextBox;
         }
 
-        public void UpdateTimer()
+        public void UpdateTime()
         {
             Time = int.Parse(TimerTextbox.Text) - 1; 
         }
