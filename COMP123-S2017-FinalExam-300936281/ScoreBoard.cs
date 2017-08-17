@@ -4,6 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+/*
+ * Name: Aldrin Fernandez
+ * Date: Aug 17, 2017
+ * StudentID: 300936281
+ * Description: This is the ScoreBoard Class
+ * Version: calculates the score and timer form the form
+ */
+
 
 namespace COMP123_S2017_FinalExam_300936281
 {
@@ -81,14 +89,24 @@ namespace COMP123_S2017_FinalExam_300936281
 
             }
         }
-        //methods
+        
+
+        /// <summary>
+        /// This is the ScoreBoard constructor
+        /// </summary>
+        /// <param name="scoreTextBox"></param>
+        /// <param name="timerTextBox"></param>
+        /// <param name="finalScoreTextBox"></param>
         public ScoreBoard(TextBox scoreTextBox,TextBox timerTextBox, TextBox finalScoreTextBox)
         {
             ScoreTextBox = scoreTextBox;
             TimerTextbox = timerTextBox;
             FinalScoreTextBox = finalScoreTextBox;
         }
-
+        //methods
+        /// <summary>
+        /// this is the updateTimer method
+        /// </summary>
         public void UpdateTime()
         {
             Time = int.Parse(TimerTextbox.Text) - 1; 

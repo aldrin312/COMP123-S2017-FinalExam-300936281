@@ -7,7 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+/*
+ * Name: Aldrin Fernandez
+ * Date: Aug 17, 2017
+ * StudentID: 300936281
+ * Description: This is the SplashFormClass
+ * Version: Created the Form and Instantiate the PickHighestCardForm from this form
+ */
 namespace COMP123_S2017_FinalExam_300936281
 {
 
