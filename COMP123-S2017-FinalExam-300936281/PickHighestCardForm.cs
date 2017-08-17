@@ -11,11 +11,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /*
- * Name:
- * Date:
- * StudentID:
- * Description:
- * Version:
+ * Name: Aldrin Fernandez
+ * Date: Aug 17, 2017
+ * StudentID: 300936281
+ * Description: This is the PickHighestCardFrom
+ * Version: Modified the Form Class
  */
 
 namespace COMP123_S2017_FinalExam_300936281
@@ -29,7 +29,7 @@ namespace COMP123_S2017_FinalExam_300936281
         Deck _deck;
         Hand _hand;
         int _maximumPoints;
-
+        private ScoreBoard _scoreBoard;
         // PUBLIC PROPERTIES +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         public List<PictureBox> DealtCardPictureBoxList
         {
@@ -199,6 +199,8 @@ namespace COMP123_S2017_FinalExam_300936281
             this._enableDealtCards();
             this._hideFinalScore();
             UserMessageTextBox.Text = "Click the Deal Button!";
+            _scoreBoard.Score = 0;
+            _scoreBoard.Time = 0;
         }
 
         /// <summary>
@@ -222,7 +224,7 @@ namespace COMP123_S2017_FinalExam_300936281
         private void PickHighestCardForm_Load(object sender, EventArgs e)
         {
             // Initialize ScoreBoard HERE
-
+            _scoreBoard = new ScoreBoard(ScoreTextBox, TimeTextBox, FinalScoreTextBox); //+++++++++++++++++++++
             // Initialize the App Sounds
             this._buildDealtCardPictureBoxList();
             this._reset();

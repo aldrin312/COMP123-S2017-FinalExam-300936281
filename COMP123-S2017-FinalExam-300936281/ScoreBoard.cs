@@ -7,13 +7,13 @@ using System.Windows.Forms;
 
 namespace COMP123_S2017_FinalExam_300936281
 {
-    class ScoreBoard
+    public class ScoreBoard
     {
         //private instances
         private TextBox _finalScoreTextBox;
         private int _score;
         private TextBox _scoreTextBox;
-        private int _timer;
+        private int _time;
         private TextBox _timerTextbox;
 
         //publuc properties
@@ -39,6 +39,7 @@ namespace COMP123_S2017_FinalExam_300936281
             set
             {
                 this._score = value;
+                ScoreTextBox.Text = this._score.ToString();
 
             }
         }
@@ -55,15 +56,16 @@ namespace COMP123_S2017_FinalExam_300936281
 
             }
         }
-        public int Timer
+        public int Time
         {
             get
             {
-                return this._timer;
+                return this._time;
             }
             set
             {
-                this._timer = value;
+                this._time = value;
+                TimerTextbox.Text = this._time.ToString();
 
             }
         }
@@ -79,7 +81,18 @@ namespace COMP123_S2017_FinalExam_300936281
 
             }
         }
+        //methods
+        public ScoreBoard(TextBox scoreTextBox,TextBox timerTextBox, TextBox finalScoreTextBox)
+        {
+            ScoreTextBox = scoreTextBox;
+            TimerTextbox = timerTextBox;
+            FinalScoreTextBox = finalScoreTextBox;
+        }
 
+        public void UpdateTimer()
+        {
+            Time = int.Parse(TimerTextbox.Text) - 1; 
+        }
 
     }
 }
